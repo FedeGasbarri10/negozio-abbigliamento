@@ -1,0 +1,27 @@
+<style>
+{ margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+body { background: #f8f9fa; color: #111; line-height: 1.5; }
+
+.navbar, footer { background: #111; color: #fff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+.navbar a, footer p { color: #fff; text-decoration: none; }
+.navbar nav a { margin-left: 1rem; }
+.navbar nav a.active { text-decoration: underline; font-weight: bold; }
+
+.hero { background: #333; color: #fff; text-align: center; padding: 3rem 1rem; }
+.hero h1 { font-size: 2.5rem; }
+
+/* Layout e Prodotti */
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+h2 { border-bottom: 2px solid #111; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+.card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+.card img { width: 100%; height: 320px; object-fit: cover; }
+.card-body { padding: 1rem; display: flex; flex-direction: column; flex-grow: 1; }
+.brand { font-size: 0.8rem; color: #666; text-transform: uppercase; }
+.price { font-weight: bold; margin: 0.5rem 0; }
+
+/* Bottoni */
+.btn { background: #111; color: #fff; padding: 0.5rem 1rem; border: none; border-radius: 4px; text-decoration: none; text-align: center; margin-top: auto; cursor: pointer; }
+.btn:hover { background: #333; }
+</style>

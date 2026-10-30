@@ -1,20 +1,321 @@
-body
-{
-    background-color: lightblue;
+/* ==========================================
+   AURA STUDIO - STYLESHEET (Design Elegante)
+   ========================================== */
+
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-h1
-{
-    color: #502513;
-    background-color: #BB7744; 
-    text-decoration: underline;
-    text-align: center;
-    border-style: solid;
-    border-width: 5px;
+html {
+    scroll-behavior: smooth;
 }
 
-p
-{
-    background-color: white;
+body {
+    background-color: #faf9f6; /* Sfondo sabbia molto tenue, rilassante e moderno */
+    color: #222222;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* BARRA PROMOZIONALE SUPERIORE */
+.top-bar {
+    background-color: #1a1a1a;
+    color: #f4efe6;
     text-align: center;
+    padding: 9px 16px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* HEADER PRINCIPALE E LOGO */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e8e5df;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+}
+
+.header-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px 14px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #1a1a1a;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo span {
+    color: #c86d51; /* Colore accento Terracotta */
+}
+
+/* BARRA DELLE CATEGORIE (EVIDENTE E FLUIDA) */
+.category-nav-wrapper {
+    background-color: #f0ece1; /* Tonalità neutra e calda */
+    border-top: 1px solid #e2ddd3;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+.category-nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 16px;
+}
+
+.category-nav a {
+    text-decoration: none;
+    color: #555555;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 10px 22px;
+    border-radius: 30px; /* Bordi arrotondati e morbidi */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.category-nav a:hover {
+    color: #1a1a1a;
+    background-color: #e4dec8;
+    transform: translateY(-1px);
+}
+
+.category-nav a.active {
+    color: #ffffff;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* SEZIONE HERO */
+.hero {
+    background: linear-gradient(135deg, #2a2826 0%, #1a1918 100%);
+    color: #f7f5f0;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 45px;
+    box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 1.5px;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: #d1ccc0;
+    max-width: 600px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* CONTENITORE PRINCIPALE */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 60px 24px;
+    flex: 1;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 45px;
+    height: 3px;
+    background-color: #c86d51;
+    border-radius: 2px;
+}
+
+/* GRIGLIA PRODOTTI & SCHEDE (CARDS) */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eae7e1;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    border-color: #d8d3c7;
+}
+
+/* IMMAGINI PRODOTTO */
+.card-img-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 105%; /* Aspect ratio ottimale per le foto */
+    background-color: #f4f2ec;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-wrapper img {
+    transform: scale(1.06);
+}
+
+/* INFORMAZIONI PRODOTTO */
+.card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.brand {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #c86d51;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    line-height: 1.35;
+}
+
+.price-row {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* PULSANTI ACQUISTA */
+.btn {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    background-color: #c86d51;
+    box-shadow: 0 4px 12px rgba(200, 109, 81, 0.3);
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+/* FOOTER */
+footer {
+    background-color: #1a1918;
+    color: #a39e93;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: auto;
+    font-size: 0.9rem;
+    border-top: 1px solid #2a2826;
+}
+
+footer strong {
+    color: #f7f5f0;
+}
+
+/* RESPONSIVE (DISPOSITIVI MOBILI) */
+@media (max-width: 768px) {
+    .header-top {
+        padding: 15px;
+    }
+    
+    .category-nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .category-nav a {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+    }
+    
+    .hero {
+        padding: 40px 18px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        gap: 20px;
+    }
 }
